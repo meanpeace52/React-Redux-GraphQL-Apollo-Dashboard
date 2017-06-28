@@ -44,8 +44,8 @@ If you want to develop FullStack locally you must follow the following instructi
 * Install the project in your computer
 
 ```
-git clone https://github.com/cdmbase/fullstack-pro
-cd fullstack-pro
+git clone https://github.com/meanpeace52/React-Redux-GraphQL-Apollo-Dashboard
+cd React-Redux-GraphQL-Apollo-Dashboard
 npm install
 ```
 to run server
