@@ -1,0 +1,74 @@
+{
+  "name": "adminide-server",
+  "version": "0.0.1",
+  "description": "Starter kit for apollo server using webpack and typescript",
+  "main": "dist/main.js",
+  "scripts": {
+    "pretest": "npm run build",
+    "build": "npm run build:clean && npm run build:dist",
+    "build:watch": "npm run build:dist -- --watch",
+    "build:dist": "webpack",
+    "build:clean": "rimraf dist",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "test:notify": "npm run test:watch -- --notify",
+    "start": "npm run start:watch",
+    "nodemon": "nodemon --watch dist dist/main.js",
+    "start:watch": "concurrently \"npm run build:watch\" \"npm run nodemon\"",
+    "preupver": "npm test",
+    "upver": "standard-version"
+  },
+  "keywords": [
+    "apollo",
+    "backend",
+    "apollo-server",
+    "typescript",
+    "webpack",
+    "graphql",
+    "graphiql",
+    "express"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdmbase/fullstack-pro.git"
+  },
+  "author": "CDMBase LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cdmbase/fullstack-pro/issues"
+  },
+  "homepage": "https://github.com/cdmbase/fullstack-pro#readme",
+  "dependencies": {
+    "@types/node": "^7.0.12",
+    "@adminide-stack/schema": "*",
+    "@types/helmet": "0.0.34",
+    "graphql": "^0.9.2",
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "graphql-server-express": "^0.7.1",
+    "graphql-subscriptions": "^0.3.1",
+    "graphql-tools": "0.11.0",
+    "concurrently": "^3.4.0",
+    "helmet": "^3.5.0",
+    "morgan": "^1.8.1"
+  },
+  "devDependencies": {
+    "@types/body-parser": "1.16.3",
+    "@types/cors": "2.8.1",
+    "@types/express": "^4.0.35",
+    "@types/jest": "^19.2.2",
+    "@types/morgan": "^1.7.32",
+    "@types/graphql": "^0.9.0",
+    "@types/node": "^7.0.12",
+    "nodemon": "^1.11.0",
+    "json-loader": "^0.5.4",
+    "jest": "^19.0.2",
+    "rimraf": "^2.6.1",
+    "webpack": "^2.3.3"
+  },
+  "typings": "dist/main.d.ts",
+  "typescript": {
+    "definition": "dist/main.d.ts"
+  }
+}

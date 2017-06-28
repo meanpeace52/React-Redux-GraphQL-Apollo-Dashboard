@@ -1,0 +1,70 @@
+{
+  "name": "@adminide-stack/client-react",
+  "version": "0.0.1",
+  "description": "browser plugin for git",
+  "main": "lib/index.js",
+  "scripts": {
+    "jest": "./node_modules/.bin/jest",
+    "test": "jest",
+    "test:debug": "npm test -- --runInBand",
+    "test:watch": "npm test -- --watch",
+    "prepublish": "npm run build",
+    "watch": "npm run build:lib:watch",
+    "build": "npm run build:clean && npm run build:lib",
+    "build:clean": "rimraf lib",
+    "build:lib": "webpack",
+    "build:lib:watch": "npm run build:lib -- --watch"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "roots": [
+      "src"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/../../node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdmbase/fullstack-pro.git"
+  },
+  "author": "CDMBase LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cdmbase/fullstack-pro/issues"
+  },
+  "homepage": "https://github.com/cdmbase/fullstack-pro#readme",
+  "peerDependencies": {
+    "@adminide-stack/client-core": "*",
+    "@adminide-stack/client-redux": "*",
+    "redux": ">=3.6.0",
+    "react": ">=15.0.0",
+    "react-dom": ">=15.0.0",
+    "react-router": "^3.0.0",
+    "react-bootstrap": "^0.31.0"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@adminide-stack/client-redux": "*",
+    "@types/jest": "^19.2.2",
+    "cdm-webpack-node-externals": "^1.5.6",
+    "css-loader": "^0.28.0",
+    "react-addons-test-utils": "^15.4.2",
+    "rimraf": "^2.6.1",
+    "webpack": "^2.3.3"
+  },
+  "typings": "lib/index.d.ts",
+  "typescript": {
+    "definition": "lib/index.d.ts"
+  }
+}

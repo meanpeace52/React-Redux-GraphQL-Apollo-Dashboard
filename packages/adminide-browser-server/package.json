@@ -1,0 +1,75 @@
+{
+  "name": "adminide-browser-server",
+  "version": "0.0.1",
+  "description": "AdminIDE Client server",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "jest": "./node_modules/.bin/jest",
+    "test": "jest",
+    "test:debug": "npm test -- --runInBand",
+    "test:watch": "npm test -- --watch",
+    "prepublish": "npm run build",
+    "start": "NODE_ENV=development webpack-dev-server --hot --history-api-fallback",
+    "stats": "NODE_ENV=production webpack && open dist/statistics.html",
+    "dev": "watch-http-server -i -d False -e js",
+    "build": "npm run build:clean && npm run build:dist",
+    "build:clean": "rimraf dist",
+    "build:dist": "webpack",
+    "build:dist:watch": "npm run build:lib -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdmbase/fullstack-pro.git"
+  },
+  "author": "CDMBase LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cdmbase/fullstack-pro/issues"
+  },
+  "homepage": "https://github.com/cdmbase/fullstack-pro#readme",
+  "devDependencies": {
+    "@types/jest": "^19.2.2",
+    "@types/minimist": "^1.2.0",
+    "@types/node": "^7.0.12",
+    "@types/react": "^15.0.23",
+    "@types/react-dom": "^0.14.23",
+    "@types/react-redux": "^4.4.38",
+    "@types/semver": "^5.3.31",
+    "@types/sinon": "^2.1.1",
+    "awesome-typescript-loader": "^3.1.2",
+    "jest": "^19.0.2",
+    "jest-cli": "^19.0.2",
+    "react-addons-test-utils": "^15.4.2",
+    "rimraf": "^2.6.1",
+    "ts-jest": "^19.0.6",
+    "source-map-loader": "^0.2.1",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2",
+    "webpack-fail-plugin": "^1.0.6",
+    "webpack-visualizer-plugin": "^0.1.11"
+  },
+  "dependencies": {
+    "@adminide-stack/client-core": "*",
+    "@adminide-stack/client-react": "*",
+    "@adminide-stack/client-redux": "*",
+    "react": "^15.4.2",
+    "react-apollo": "^1.2.0",
+    "redux-thunk": "^2.2.0",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
+    "reselect": "^3.0.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/../../node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$"
+  }
+}
