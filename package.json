@@ -140,7 +140,7 @@
     "identicon.js": "^2.2.1",
     "immutability-helper": "^2.2.0",
     "inversify": "^3.3.0",
-    "mongoose": "^4.9.8",
+    "mongoose": "^5.9.12",
     "morgan": "^1.8.1",
     "prettysize": "^0.1.0",
     "react": "^15.4.2",
